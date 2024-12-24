@@ -10,7 +10,11 @@ const MONGO_URL = process.env.MONGO_URI;
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
+const TravelRoute = require('./Routes/TravelerRoute');
+
+
 const app = express();
+app.use(bodyParser.json());
 
 mongoose.connect(MONGO_URL).then(()=>{
     console.log('Mongo DB connected......');
@@ -18,6 +22,8 @@ mongoose.connect(MONGO_URL).then(()=>{
     console.log(e);
     
 });
+
+app.use('/api/v1/travelers', TravelRoute);
 
 
 app.listen(PORT,()=>{

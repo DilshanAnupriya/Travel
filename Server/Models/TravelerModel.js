@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const TravelerSchema = new mongoose.Schema({
-    travellerName:{
+    travelerName:{
         type:String,
         required:true,
         unique:true
