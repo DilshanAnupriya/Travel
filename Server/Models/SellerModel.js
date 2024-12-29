@@ -31,12 +31,16 @@ const SellerSchema = new mongoose.Schema({
         required:true
     },
     rating:{
-        type:String,
+        type:Number,
+        required:true
     },
     images:{
         type:Array,
         required:true
     }
 });
+SellerSchema.statics.highestRatings = function(){
+    return this.find({rating:{$gt:7}});
+} 
 
 module.exports = mongoose.model("Seller",SellerSchema);
