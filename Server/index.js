@@ -12,6 +12,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 const TravelRoute = require('./Routes/TravelerRoute');
 const ProductRoute = require('./Routes/ProductRoute');
+const UserRoute = require('./Routes/UserRoute');
 
 
 const app = express();
@@ -26,6 +27,7 @@ mongoose.connect(MONGO_URL).then(()=>{
 
 app.use('/api/v1/travelers', TravelRoute);
 app.use('/api/v1/products', ProductRoute);
+app.use('/api/v1/users', UserRoute);
 
 
 app.listen(PORT,()=>{
