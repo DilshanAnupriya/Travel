@@ -30,7 +30,7 @@ const getTravelerById = async(req,res)=>{
     try {
         const selectedtraveler = await Traveler.findById(req.params.id);
         if(!selectedtraveler){
-        res.status(404).json({message:"not found"});
+            return res.status(404).json({message:"not found"});
         }
         res.status(200).json({message:"Traveler",Data:selectedtraveler});
 
@@ -49,7 +49,7 @@ const updateTraveler = async(req,res)=>{
             }
         );
         if(!updatedTraveler){
-            res.status(500).json({error:e.message});
+            return  res.status(500).json({error:e.message});
         }
         res.status(200).json({message:"Traveler updated!",Data:updatedTraveler});
     } catch (error) {
@@ -61,7 +61,7 @@ const deleteTraveler = async(req,res)=>{
     try {
         const deletedTraveler =  await Traveler.findByIdAndDelete(req.params.id);
         if(!deletedTraveler){
-            res.status(404).json({message:"not found"});
+            return res.status(404).json({message:"not found"});
         }
         res.status(200).json({message:"Traveler deleted!",data:deletedTraveler});
     } catch (error) {
