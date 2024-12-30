@@ -10,7 +10,7 @@ const PaymentSchema = new mongoose.Schema({
         required:true
     },
     tax:{
-        type:Date,
+        type:Number,
         required:true
     },
     extraChargers:{  
@@ -18,7 +18,7 @@ const PaymentSchema = new mongoose.Schema({
         required:true
     },
     discount:{ 
-        type:String,
+        type:Number,
         required:true
     },
     date:{
