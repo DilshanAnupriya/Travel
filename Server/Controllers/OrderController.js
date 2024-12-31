@@ -59,7 +59,7 @@ const UpdateStatusOrder = async (req,res)=>{
         const {id} = req.params
         const {status} = req.body
 
-        if(!["PENDING","COMPLETE","CANCELED","REJECTED"].includes(status)){
+        if(!["PENDING","COMPLETED","CANCELED","REJECTED"].includes(status)){
             return res.status(404).json({message:"invalid status",data:null});
         }
         const updatedStatus = await Order.findByIdAndUpdate(id,{status},{new:true});
