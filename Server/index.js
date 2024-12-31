@@ -15,6 +15,7 @@ const ProductRoute = require('./Routes/ProductRoute');
 const UserRoute = require('./Routes/UserRoute');
 const SellerRoute = require('./Routes/SellerRoute');
 const PaymentRoute = require('./Routes/PaymentRoute');
+const OrderRoute = require('./Routes/OrderRoute');
 
 
 const app = express();
@@ -32,6 +33,7 @@ app.use('/api/v1/products', ProductRoute);
 app.use('/api/v1/users', UserRoute);
 app.use('/api/v1/sellers', SellerRoute);
 app.use('/api/v1/payment', PaymentRoute);
+app.use('/api/v1/orders', OrderRoute);
 
 
 app.listen(PORT,()=>{
