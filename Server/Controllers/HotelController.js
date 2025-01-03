@@ -65,8 +65,18 @@ const DeleteHotel = async (req,res)=>{
         res.status(500).json({error:e.message})        
     }
 }
+const HeighestRatings = async(req,res)=>{
+    try {
+        const heighest = await Hotel.heighestRatings();
+        res.status(200).json({message:"Top",data:heighest});
+    } catch (e) {
+        res.status(500).json({error:e.message}) 
+    }
+   
+    
+}
 
 
 module.exports ={
-    CreateHotel,FindAllHotel,FindHotelById,UpdateHotel,DeleteHotel
+    CreateHotel,FindAllHotel,FindHotelById,UpdateHotel,DeleteHotel,HeighestRatings
 }

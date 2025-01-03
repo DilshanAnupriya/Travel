@@ -34,5 +34,8 @@ const HotelSchema = new mongoose.Schema({
         required:true
     }
 });
+HotelSchema.statics.heighestRatings = function(){
+    return this.find({rating:{$gt:8}});
+}
 
 module.exports = mongoose.model("Hotel",HotelSchema);

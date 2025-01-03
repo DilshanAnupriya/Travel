@@ -33,7 +33,17 @@ const GuiderSchema = new mongoose.Schema({
     isActive:{
         type:Boolean,
         required:true
+    },
+    area:{
+        type:String,
+        required:true
+    },
+    ratings:{
+        type:Number,
+        required:true
     }
 });
-
+GuiderSchema.statics.topGuiders = function(){
+    return this.find({ratings:{$gt:8}})
+};
 module.exports = mongoose.model("Guider",GuiderSchema);

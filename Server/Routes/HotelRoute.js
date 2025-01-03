@@ -8,6 +8,7 @@ router.get('/find-all',HotelController.FindAllHotel);
 router.get('/find-by/:id',HotelController.FindHotelById);
 router.put('/update/:id',HotelController.UpdateHotel);
 router.delete('/delete/:id',HotelController.DeleteHotel);
+router.get('/best-hotels',HotelController.HeighestRatings);
 
 
 module.exports = router;
