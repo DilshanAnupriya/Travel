@@ -18,6 +18,7 @@ const PaymentRoute = require('./Routes/PaymentRoute');
 const OrderRoute = require('./Routes/OrderRoute');
 const HotelRoute = require('./Routes/HotelRoute');
 const GuideRoute = require('./Routes/GuiderRoute');
+const BookingRoute = require('./Routes/BookingRoute');
 
 
 const app = express();
@@ -38,6 +39,7 @@ app.use('/api/v1/payment', PaymentRoute);
 app.use('/api/v1/orders', OrderRoute);
 app.use('/api/v1/hotels', HotelRoute);
 app.use('/api/v1/guiders', GuideRoute);
+app.use('/api/v1/booking', BookingRoute);
 
 
 app.listen(PORT,()=>{

@@ -9,7 +9,11 @@ const BookingSchema = new mongoose.Schema({
         type:Number,
         required:true
     },
-    date:{
+    start_date:{
+        type:Date,
+        required:true
+    },
+    end_date:{
         type:Date,
         required:true
     },
@@ -21,7 +25,19 @@ const BookingSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    contact:{
+    email:{
+        type:String,
+        required:true
+    },
+    roomType:{
+        type:String,
+        required:true
+    },
+    roomId:{
+        type:String,
+        required:true
+    },
+    date:{
         type:String,
         required:true
     }
